@@ -13,19 +13,19 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/06/28/parseint/"/>
+    <link rel="canonical" href="http://example.com/2023/07/04/esextends/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="parseInt使用规则详解">
+        <meta name="description" content="ES5和ES6继承的几方面区别说明">
 <meta property="og:type" content="article">
-<meta property="og:title" content="parseInt输出">
-<meta property="og:url" content="http://example.com/2023/06/28/parseInt/index.html">
+<meta property="og:title" content="ES5和ES6继承的区别">
+<meta property="og:url" content="http://example.com/2023/07/04/esExtends/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="parseInt使用规则详解">
+<meta property="og:description" content="ES5和ES6继承的几方面区别说明">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-28T10:45:42.000Z">
+<meta property="article:published_time" content="2023-07-04T17:07:11.000Z">
 <meta property="article:modified_time" content="2023-07-06T07:13:52.160Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JavaScript">
@@ -41,7 +41,7 @@
     
     <title>
         
-            parseInt输出 -
+            ES5和ES6继承的区别 -
         
         EchoNine
     </title>
@@ -230,7 +230,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">parseInt输出</h1>
+                    <h1 class="article-title-regular">ES5和ES6继承的区别</h1>
                 </div>
             
                 
@@ -252,8 +252,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-06-28 10:45:42</span>
-        <span class="mobile">2023-06-28 10:45</span>
+        <span class="desktop">2023-07-04 17:07:11</span>
+        <span class="mobile">2023-07-04 17:07</span>
         <span class="hover-info">创建</span>
     </span>
     
@@ -265,17 +265,6 @@
         </span>
     
 
-    
-        <span class="article-categories article-meta-item">
-            <i class="fa-regular fa-folders"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/">面试题集</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -293,12 +282,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>246 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>817 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -314,30 +303,53 @@
             
 
             <div class="article-content markdown-body">
-                <p>注：参考<br><a class="link"   target="_blank" rel="noopener" href="https://muyiy.cn/question/js/2.html" >木易杨前端进阶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/94928f2647b7" >parseInt详解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ul>
-<li>parseInt(string[, radix])t函数解析字符串参数，并返回一个指定基数（进制）的整数或NaN</li>
-<li>如果省略radix或其值为0，则数字将以10为基础来解析；如果它以“0x”或“0X”开头，将以16为基数</li>
-<li>radix是一个介于2和36之间的整数（包括2和36），默认为10</li>
-<li>每一项都需要小于radix（舍去不满足的位数及其后面的所有位数），再进行进制转换计算</li>
+                <p>注：参考 <a class="link"   target="_blank" rel="noopener" href="https://muyiy.cn/question/js/7.html" >木易杨前端进阶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>ES5：使用原型链和构造函数来实现继承</li>
+<li>ES6：引入class和extends关键字来定义类和子类，并且子类使用super关键来调用父类构造函数</li>
 </ul>
-<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>].<span class="title function_">map</span>(<span class="built_in">parseInt</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 实际为：</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(item, index)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算：</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;1&#x27;</span>, <span class="number">0</span>) <span class="comment">// 1 =&gt; 第2点：parseInt(&#x27;1&#x27;, 10) 1*10^0 = 1</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;2&#x27;</span>, <span class="number">1</span>) <span class="comment">// NaN =&gt; 第3点</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;3&#x27;</span>, <span class="number">2</span>) <span class="comment">// NaN =》 第4点：parseInt(&#x27;&#x27;, 5)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩展：</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;445&#x27;</span>, <span class="number">5</span>) <span class="comment">// 24 =&gt; 第4点：parseInt(&#x27;44&#x27;, 5) 4*5^1 + 4*5^0 = 24</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">&#x27;544&#x27;</span>, <span class="number">5</span>) <span class="comment">// NaN =&gt; 第4点：parseInt(&#x27;&#x27;, 5)</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="原型链设置（写法）"><a href="#原型链设置（写法）" class="headerlink" title="原型链设置（写法）"></a>原型链设置（写法）</h3><ul>
+<li><p>ES5：继承需要手动设置子类的原型为父类的一个实例，通过调用父类的构造函数来继承属性，并通过将子类的原型设置为一个新对象来继承方法</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Parent</span>(<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Parent</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHello</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Child</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">    <span class="comment">// 继承父类属性</span></span><br><span class="line">    <span class="title class_">Parent</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, name);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承父类方法</span></span><br><span class="line"><span class="title class_">Child</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="title class_">Parent</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="title class_">Child</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">constructor</span> = <span class="title class_">Child</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Child</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayAge</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;I am &#x27;</span> + <span class="variable language_">this</span>.<span class="property">age</span> + <span class="string">&#x27; years old.&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建子类实例</span></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">10</span>);</span><br><span class="line">child.<span class="title function_">sayHello</span>(); <span class="comment">// 输出: Hello, Alice</span></span><br><span class="line">child.<span class="title function_">sayAge</span>(); <span class="comment">// 输出: I am 10 years old.</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>PS：让我们逐行解释这些代码的作用：<br><code>Child.prototype = Object.create(Parent.prototype); Object.create(Parent.prototype) 创建了一个新的对象，并将其原型设置为Parent.prototype，实现了子类原型继承父类原型的功能。 这样一来，Child.prototype就拥有了从Parent.prototype继承而来的所有方法。 Child.prototype.constructor = Child; 这一行代码将Child.prototype对象的constructor属性指向Child构造函数，修复了原型链继承中可能出现的constructor指向错误的问题。 在继承原型链时，Child.prototype对象会自动继承Parent.prototype对象的constructor属性，这会导致Child.prototype.constructor指向Parent构造函数。通过这行代码，我们将其指向正确的Child构造函数。 综上所述，这两行代码的作用是确保子类的原型链上能够正确继承父类的方法，并修复了可能出现的constructor指向错误的问题。</code></p>
+</blockquote>
+</li>
+<li><p>ES6：继承通过使用extends关键字来指定父类，子类会自动继承父类的属性和方法，无需手动操作原型链</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">父类</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, &#x27;</span> + <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Parent</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(name); <span class="comment">// 调用父类构造函数</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">sayAge</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;I am &#x27;</span> + <span class="variable language_">this</span>.<span class="property">age</span> + <span class="string">&#x27; years old.&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建子类实例</span></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> <span class="title class_">Child</span>(<span class="string">&#x27;Alice&#x27;</span>, <span class="number">10</span>);</span><br><span class="line">child.<span class="title function_">sayHello</span>(); <span class="comment">// 输出: Hello, Alice</span></span><br><span class="line">child.<span class="title function_">sayAge</span>(); <span class="comment">// 输出: I am 10 years old.</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h3 id="构造函数调用（执行时机）"><a href="#构造函数调用（执行时机）" class="headerlink" title="构造函数调用（执行时机）"></a>构造函数调用（执行时机）</h3><ul>
+<li>ES5：父类的构造函数在创建子类实例时被调用</li>
+<li>ES6：父类的构造函数在子类构造函数中使用super关键字被调用，确保了父类属性的正确初始化</li>
+</ul>
+<h3 id="继承内置对象的方法"><a href="#继承内置对象的方法" class="headerlink" title="继承内置对象的方法"></a>继承内置对象的方法</h3><ul>
+<li>ES5：需要手动将父类的原型方法复制到子类的原型中</li>
+<li>ES6：继承内置对象（如Array、Map、Set等）的子类可以直接调用内置对象的方法</li>
+</ul>
+<h3 id="静态方法的继承"><a href="#静态方法的继承" class="headerlink" title="静态方法的继承"></a>静态方法的继承</h3><ul>
+<li>ES5：需要手动复制父类的静态方法到子类中</li>
+<li>ES6：可以直接通过extends关键字继承父类的静态方法</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>ES6的继承语法更加简洁明了，同时提供了更好的继承内置对象和静态方法的支持，使得面向对象编程更加方便。</p>
+</blockquote>
+
             </div>
 
             
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> parseInt输出</li>
+        <li><strong>标题:</strong> ES5和ES6继承的区别</li>
         <li><strong>作者:</strong> jiujiu</li>
-        <li><strong>创建于:</strong> 2023-06-28 10:45:42</li>
+        <li><strong>创建于:</strong> 2023-07-04 17:07:11</li>
         
             <li>
                 <strong>更新于:</strong> 2023-07-06 07:13:52
             </li>
         
         <li>
-            <strong>链接:</strong> https://echonine.github.io/2023/06/28/parseInt/
+            <strong>链接:</strong> https://echonine.github.io/2023/07/04/esExtends/
         </li>
         <li>
             <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
@@ -363,29 +375,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/06/29/debounceThrottle/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">防抖 and 节流</span>
-                                    <span class="post-nav-item">上一篇</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/06/27/overHidden/"
+                            href="/2023/07/03/setVSmap/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">溢出省略效果</span>
+                                    <span class="post-nav-title-item">比较Set、Map、WeakSet、WeakMap</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -450,8 +447,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">parseInt输出</div>
-        
+        <div class="page-title">ES5和ES6继承的区别</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E8%AE%BE%E7%BD%AE%EF%BC%88%E5%86%99%E6%B3%95%EF%BC%89"><span class="nav-text">原型链设置（写法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%EF%BC%88%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%EF%BC%89"><span class="nav-text">构造函数调用（执行时机）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">继承内置对象的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-text">静态方法的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
 
     </div>
 </div>
