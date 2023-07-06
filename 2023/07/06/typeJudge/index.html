@@ -13,22 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/06/13/hidemethods/"/>
+    <link rel="canonical" href="http://example.com/2023/07/06/typejudge/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="三种隐藏元素方式的区别">
+        <meta name="description" content="js的数据类型汇总及其数据检测方法总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opacity | visibility | display">
-<meta property="og:url" content="http://example.com/2023/06/13/hideMethods/index.html">
+<meta property="og:title" content="typeJudge">
+<meta property="og:url" content="http://example.com/2023/07/06/typeJudge/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="三种隐藏元素方式的区别">
+<meta property="og:description" content="js的数据类型汇总及其数据检测方法总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-13T09:29:47.000Z">
+<meta property="article:published_time" content="2023-07-06T16:03:35.000Z">
 <meta property="article:modified_time" content="2023-07-06T08:39:23.100Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
     
     
@@ -41,7 +41,7 @@
     
     <title>
         
-            opacity | visibility | display -
+            typeJudge -
         
         EchoNine
     </title>
@@ -230,7 +230,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">opacity | visibility | display</h1>
+                    <h1 class="article-title-regular">typeJudge</h1>
                 </div>
             
                 
@@ -252,8 +252,8 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-06-13 09:29:47</span>
-        <span class="mobile">2023-06-13 09:29</span>
+        <span class="desktop">2023-07-06 16:03:35</span>
+        <span class="mobile">2023-07-06 16:03</span>
         <span class="hover-info">创建</span>
     </span>
     
@@ -266,24 +266,13 @@
     
 
     
-        <span class="article-categories article-meta-item">
-            <i class="fa-regular fa-folders"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/">面试题集</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
     
         <span class="article-tags article-meta-item">
             <i class="fa-regular fa-tags"></i>&nbsp;
             <ul>
                 
                     <li>
-                        <a href="/tags/CSS/">CSS</a>&nbsp;
+                        <a href="/tags/JavaScript/">JavaScript</a>&nbsp;
                     </li>
                 
             </ul>
@@ -293,12 +282,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>363 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>819 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -314,42 +303,49 @@
             
 
             <div class="article-content markdown-body">
-                <p>注：参考 <a class="link"   target="_blank" rel="noopener" href="https://muyiy.cn/question/css/57.html" >木易杨前端进阶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th>opacity: 0</th>
-<th>visibility: hidden</th>
-<th>display: none</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">结构</td>
-<td>占据空间，能绑定点击事件</td>
-<td>占据空间，不能绑定点击事件</td>
-<td>不占据空间，不能绑定点击事件</td>
-</tr>
-<tr>
-<td align="center">继承</td>
-<td>非继承属性（子孙节无法修改自身属性显示）</td>
-<td>继承属性（子孙节点可以修改自身属性显示）</td>
-<td>非继承属性（子孙节点无法修改自身属性显示）</td>
-</tr>
-<tr>
-<td align="center">性能</td>
-<td>只造成重绘，性能消耗较少</td>
-<td>只造成重绘，性能消耗较少</td>
-<td>会造成回流，性能消耗较大</td>
-</tr>
-</tbody></table>
-<p><strong><Font color="#c53a47">补充：</Font></strong></p>
-<ul>
-<li>株连性：如果祖先元素遭遇某祸害，则其子孙孙无一例外也要遭殃，比如 opacity: 0 和 display: none，若父节点元素应用了 opacity: 0 和 display: none，无论其子孙元素如何挣扎都不会再出现在大众视野；而若父节点元素应用 visibility: hidden，子孙元素应用 visibility: visible，那么其就会毫无意外的显现出来</li>
-<li>visibility 会立即显示，隐藏时会延时；opacity 可以延时显示和隐藏</li>
-<li>opacity 重绘：在一般情况下，opacity 会触发重绘，即 Recalculate style &#x3D;&gt; Update Layer Tree。不管你是否开启 GPU 提升为合成层与否；如果利用 animation 动画，对 opacity 做变化（animation 会默认触发 GPU 加速），则只会触发 GPU 层面的 composite，不会触发重绘</li>
-<li>opacity 使用场景：自定义图片上传按钮</li>
-</ul>
+                <p>注：参考 <a class="link"   target="_blank" rel="noopener" href="https://muyiy.cn/question/js/21.html" >木易杨前端进阶 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><blockquote>
+<p>Number、String、Boolean、Undefined、Null - 【存储在栈中，占据空间小、大小固定】</p>
+</blockquote>
+<h4 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h4><blockquote>
+<p>Array、Object、Function - 【在栈中存储指针，指针指向存储在堆中的对象实体，占据空间大、大小不固定】</p>
+</blockquote>
+<h4 id="ES6新增数据类型"><a href="#ES6新增数据类型" class="headerlink" title="ES6新增数据类型"></a>ES6新增数据类型</h4><blockquote>
+<p>BigInt、Symbol - 【BigInt为了解决超出最大安全数字进行计算造成的精度缺失、计算不准的问题，可以安全地存储操作大数；Symbol是独一无二不可变的，主要为了解决可能出现的全局变量冲突的问题】</p>
+</blockquote>
+<h3 id="检测方式"><a href="#检测方式" class="headerlink" title="检测方式"></a>检测方式</h3><h4 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h4><blockquote>
+<p>只能检测大部分基本数据类型和引用类型function，而null、Array、Object，检测结果都是Object，无法检测具体是哪种类型</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">&quot;Hello&quot;</span>; <span class="comment">// &quot;string&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">42</span>; <span class="comment">// &quot;number&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">// &quot;boolean&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">// &quot;undefined&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">// &quot;object&quot; (注意这是一个历史遗留问题，实际上null是一个特殊的对象类型)</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;; <span class="comment">// &quot;object&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> []; <span class="comment">// &quot;object&quot;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;; <span class="comment">// &quot;function&quot;</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="instanceof操作符"><a href="#instanceof操作符" class="headerlink" title="instanceof操作符"></a>instanceof操作符</h4><blockquote>
+<p>运行机制为判断在其原型链中是否能够找到该类型的原型；只能正确判断引用数据类型，而基本类型不行，并且所有对象类型instanceof Object都是true；检查对象是否是某个类的实例</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;string&#x27;</span> <span class="keyword">instanceof</span> <span class="title class_">String</span>; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">arr <span class="keyword">instanceof</span> <span class="title class_">Array</span>; <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 使用instanceof判断一个对象是否为数组，instanceof会判断这个对象的原型链上是否会找到对应的Array的原型，找到返回true，否则返回false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">person <span class="keyword">instanceof</span> <span class="title class_">Person</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>PS：instance of背后原理</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测构造函数的prototype属性是否出现在某个实例对象的原型链上</span></span><br><span class="line"><span class="keyword">function</span> myInstanceof = <span class="function">(<span class="params">left, right</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 基本数据类型都返回false</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> left !== <span class="string">&#x27;object&#x27;</span> || left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> proto = <span class="title class_">Object</span>.<span class="title function_">getPrototypeOf</span>(left);</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(proto === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(proto === right.<span class="property"><span class="keyword">prototype</span></span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        proto = <span class="title class_">Object</span>.<span class="title function_">getPrototypeOf</span>(proto);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h4><blockquote>
+<p>对象的constructor属性指向创建该对象的构造函数，可以通过检查constructor属性来判断对象的类型</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">str.<span class="property">constructor</span> === <span class="title class_">String</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">42</span>;</span><br><span class="line">num.<span class="property">constructor</span> === <span class="title class_">Number</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.<span class="property">constructor</span> === <span class="title class_">Object</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="Object-prototype-toString方法"><a href="#Object-prototype-toString方法" class="headerlink" title="Object.prototype.toString方法"></a>Object.prototype.toString方法</h4><blockquote>
+<p>使用Object.prototype.toString方法可以返回一个表示对象类型的字符串</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="string">&quot;Hello&quot;</span>); <span class="comment">// &quot;[object String]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="number">42</span>); <span class="comment">// &quot;[object Number]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="literal">true</span>); <span class="comment">// &quot;[object Boolean]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="literal">undefined</span>); <span class="comment">// &quot;[object Undefined]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="literal">null</span>); <span class="comment">// &quot;[object Null]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(&#123;&#125;); <span class="comment">// &quot;[object Object]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>([]); <span class="comment">// &quot;[object Array]&quot;</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;); <span class="comment">// &quot;[object Function]&quot;</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>PS：为什么直接toString()不行？<br><code>每一个继承Object的对象都有toString方法，如果toString方法没有重写的话，会返回[Object type]，其中type为对象的类型，而Arrry、Function等类型作为Object实例时，都重写了toString，调用的是重写后的方法，而非Object上原型toString方法，会直接返回都是内容的字符串</code></p>
+</blockquote>
+<h4 id="Array-isArray方法"><a href="#Array-isArray方法" class="headerlink" title="Array.isArray方法"></a>Array.isArray方法</h4><blockquote>
+<p>用于检查一个值是否为数组</p>
+</blockquote>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>([]); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">// true</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>(&#123;&#125;); <span class="comment">// false</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">isArray</span>(<span class="string">&quot;Hello&quot;</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>PS：当检测Array实例时，Array.isArray优于instanceof ，因为 Array.isArray可以检测出iframes</p>
+</blockquote>
 
             </div>
 
@@ -357,16 +353,16 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> opacity | visibility | display</li>
+        <li><strong>标题:</strong> typeJudge</li>
         <li><strong>作者:</strong> jiujiu</li>
-        <li><strong>创建于:</strong> 2023-06-13 09:29:47</li>
+        <li><strong>创建于:</strong> 2023-07-06 16:03:35</li>
         
             <li>
                 <strong>更新于:</strong> 2023-07-06 08:39:23
             </li>
         
         <li>
-            <strong>链接:</strong> https://echonine.github.io/2023/06/13/hideMethods/
+            <strong>链接:</strong> https://echonine.github.io/2023/07/06/typeJudge/
         </li>
         <li>
             <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
@@ -381,7 +377,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/CSS/">#CSS</a>&nbsp;
+                            <a href="/tags/JavaScript/">#JavaScript</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -392,29 +388,14 @@
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/06/14/setWidth/"
-                            >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
-                                <span class="title flex-center">
-                                    <span class="post-nav-title-item">修改img的宽度</span>
-                                    <span class="post-nav-item">上一篇</span>
-                                </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/06/12/hvCenter/"
+                            href="/2023/07/04/esExtends/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">div 水平垂直居中</span>
+                                    <span class="post-nav-title-item">ES5和ES6继承的区别</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -479,8 +460,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">opacity | visibility | display</div>
-        
+        <div class="page-title">typeJudge</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%96%B9%E5%BC%8F"><span class="nav-text">检测方式</span></a></li></ol>
 
     </div>
 </div>
